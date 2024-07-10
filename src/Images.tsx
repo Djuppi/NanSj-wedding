@@ -1,0 +1,25 @@
+const IMAGES = {
+  portrait: new URL("./assets/portrait.WebP", import.meta.url).href,
+  skodsborg: new URL("./assets/Skodsborg1.jpg", import.meta.url).href,
+  transport: new URL("./assets/Skodsborg3.jpg", import.meta.url).href,
+  accommodation: new URL("./assets/accommodation.jpeg", import.meta.url).href,
+  ceremony: new URL("./assets/Vielse1.jpg", import.meta.url).href,
+  reception: new URL("./assets/Skodsborg2.jpg", import.meta.url).href,
+  weddingDinner: new URL("./assets/VillaRex.jpg", import.meta.url).href,
+  lemon: new URL("./assets/sitron.png", import.meta.url).href,
+  lemonBranch: new URL("./assets/Sitron2.png", import.meta.url).href,
+  meetUp: new URL("./assets/wedding-couple.png", import.meta.url).href,
+  rings: new URL("./assets/rings.png", import.meta.url).href,
+  camera: new URL("./assets/photo-camera.png", import.meta.url).href,
+  cheers: new URL("./assets/cheers.png", import.meta.url).href,
+  table: new URL("./assets/wedding-dinner.png", import.meta.url).href,
+  dinner: new URL("./assets/dinner.png", import.meta.url).href,
+  dj: new URL("./assets/dj-music.png", import.meta.url).href,
+  cake: new URL("./assets/cake.png", import.meta.url).href,
+  discoBall: new URL("./assets/disco-ball.png", import.meta.url).href,
+  nightFood: new URL("./assets/night-food.png", import.meta.url).href,
+  moon: new URL("./assets/moon.png", import.meta.url).href,
+  arch: new URL("./assets/wedding-arch.png", import.meta.url).href,
+};
+
+export default IMAGES;
