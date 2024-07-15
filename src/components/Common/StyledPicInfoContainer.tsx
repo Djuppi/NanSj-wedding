@@ -46,7 +46,7 @@ const StyledPicInfoContainer: FC<Props> = ({
         sm={6}
         order={{ xs: 1, sm: orderInfoDesktop }}
         sx={{
-          backgroundColor: colors.yellow[200],
+          backgroundColor: colors.orange[600],
           padding: "1rem 2rem",
           borderRadius: " 0 5px 5px 0",
           display: "flex",

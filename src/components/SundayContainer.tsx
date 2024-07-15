@@ -10,8 +10,8 @@ import Images from "../Images";
 
 const SundayContainer = () => (
   <StyledPicInfoContainer
-    orderImageDesktop={1}
-    orderInfoDesktop={2}
+    orderImageDesktop={2}
+    orderInfoDesktop={1}
     image={Images.reception}
     id="program"
   >

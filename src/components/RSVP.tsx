@@ -152,7 +152,7 @@ const RSVP = React.forwardRef(({}, ref) => {
           id="rsvp"
           ref={ref as RefObject<HTMLDivElement>} // Update the type of the 'ref' prop
           sx={{
-            padding: "2rem",
+            padding: "6rem 2rem 2rem 2rem",
             margin: "1rem auto",
             display: "flex",
             justifyContent: "center",
@@ -163,19 +163,18 @@ const RSVP = React.forwardRef(({}, ref) => {
           }}
         >
           <LazyLoadImage
-            src={IMAGES.lemonBranch}
+            src={IMAGES.flowers}
             alt="bride and groom"
-            width={270}
+            width="100%"
             style={{
               position: "absolute",
-              top: "20px",
-              right: "50%",
-              filter: "opacity(0.6)",
-              transform: "translateX(70%)",
+              filter: "opacity(0.4)",
+              top: 0,
+              height: "50%",
             }}
           />
           {!isLastStep() && (
-            <Typography variant="h2" component="h5">
+            <Typography variant="h2" component="h5" sx={{ zIndex: 10, backgroundColor: "#ffffff88", borderRadius: "8px", padding: ".5rem" }} className="calligraphy-font">
               RSVP
             </Typography>
           )}

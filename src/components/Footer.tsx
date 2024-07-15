@@ -13,7 +13,7 @@ const Footer: FC = () => {
         flexDirection: "column",
         justifyContent: "space-evenly",
         padding: "2rem",
-        backgroundColor: colors.yellow[200],
+        backgroundColor: colors.orange[600],
         color: "black",
         gap: "1rem",
       }}

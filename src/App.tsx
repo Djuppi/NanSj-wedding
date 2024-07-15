@@ -15,7 +15,6 @@ import CeremonyContainer from "@components/CeremonyContainer";
 import IMAGES from "./Images";
 import Footer from "@components/Footer";
 import AccommodationContainer from "@components/AccommodationContainer";
-import ReceptionContainer from "@components/ReceptionContainer";
 import DinnerContainer from "@components/DinnerContainer";
 import WishesContainer from "@components/WishesContainer";
 import TransportContainer from "@components/TransportContainer";
@@ -68,11 +67,13 @@ function App() {
             src={IMAGES.portrait}
             alt="bride and groom"
             effect="opacity"
-            width={isLargeScreen ? 120 : 300}
+            width={isLargeScreen ? 200 : 300}
             style={{
               position: "absolute",
               right: isMediumScreen ? "5px" : "70px",
-              top: isMediumScreen ? "70px" : "130px",
+              top: isMediumScreen ? "40px" : "70px",
+              clipPath: "circle(50% at 50% 50%)",
+              filter: "grayscale(.3) opacity(0.9)"
             }}
           />
 
@@ -112,7 +113,7 @@ function App() {
         <InfoContainer />
         <AccommodationContainer />
         <TransportContainer />
-        <CeremonyContainer />
+        {/* <CeremonyContainer /> */}
         <DinnerContainer />
         <SundayContainer />
         <WishesContainer />

@@ -1,18 +1,14 @@
-import { Link, Typography, useTheme } from "@mui/material";
-import { Link as ScrollLink } from "react-scroll";
+import { Typography } from "@mui/material";
 import Images from "../Images";
 import StyledPicInfoContainer from "./Common/StyledPicInfoContainer";
-import { tokens } from "../theme";
 
 const InfoContainer = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
 
   return (
     <StyledPicInfoContainer
       orderImageDesktop={2}
       orderInfoDesktop={1}
-      image={Images.skodsborg}
+      image={Images.Kirke}
       id="info"
     >
       <Typography

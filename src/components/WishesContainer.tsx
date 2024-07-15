@@ -1,7 +1,7 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
-import { useTheme } from "@emotion/react";
+
 import { tokens } from "../theme";
 
 const WishesContainer: FC = () => { 
@@ -35,7 +35,7 @@ const WishesContainer: FC = () => {
         Dersom noen likevel vil ha med gave, har vi opprettet en ønskeliste på
         Ønskeskyen.
       </Typography>
-      <Link href="">Se ønsker her</Link>
+      <Link href="https://onskeskyen.dk/s/djbdqm" sx={{ color: colors.brown[500], textDecoration: "none" }}>Se ønsker her</Link>
     </Box>
   )
 };

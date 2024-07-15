@@ -70,7 +70,7 @@ const StyledAppBar = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              style={{ cursor: "pointer", color: colors.green[500] }}
+              style={{ cursor: "pointer", color: colors.orange[500] }}
             >
               {page.Title}
             </Link>

@@ -15,7 +15,7 @@ export default defineConfig({
       }
     ]
   },
-  base: "/",
+  base: "/NanSj-wedding/",
   server: {
     port: 1337,
   },

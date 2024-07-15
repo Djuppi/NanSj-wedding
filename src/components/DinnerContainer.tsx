@@ -10,7 +10,7 @@ import Images from "../Images";
 
 const DinnerContainer = () => (
   <StyledPicInfoContainer
-    orderImageDesktop={2}
+    orderImageDesktop={1}
     orderInfoDesktop={1}
     image={Images.weddingDinner}
     id="dinner"
@@ -23,6 +23,24 @@ const DinnerContainer = () => (
       Middag og fest
     </Typography>
     <List>
+    <ListItem>
+          <ListItemIcon>
+            <img src={Images.meetUp} width={20} alt="Brides couple" />
+          </ListItemIcon>
+          <ListItemText primary="13:00 - Vielse i Hvam kirke" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <img src={Images.rings} width={20} alt="Wedding rings" />
+          </ListItemIcon>
+          <ListItemText primary="14:00 - Ankomst Lille Restrup Hovedgaard med servering og fotografering" />
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <img src={Images.camera} width={20} alt="camera" />
+          </ListItemIcon>
+          <ListItemText primary="15:30 - Bryllupskake og velkomstdrink" />
+        </ListItem>
       <ListItem>
         <ListItemIcon>
           <img src={Images.dinner} width={20} alt="menu" />
