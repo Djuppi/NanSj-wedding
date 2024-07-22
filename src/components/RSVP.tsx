@@ -8,7 +8,7 @@ import React, { RefObject, useEffect, useState } from "react";
 import submitForm from "../api/SubmitForm";
 
 import InfoForm from "./InfoForm";
-import FoodForm from "./FoodForm";
+
 import AccommodationForm from "./AccommodationForm";
 import CustomMobileStepper from "./Common/StyledMobileStepper";
 import { RSVPValidation } from "../utils/RSVPValidation";
@@ -20,13 +20,9 @@ export interface RSVPFormValues {
   guest1: string;
   guest2: string;
   expectation: string;
-  email: string;
   allergies: string;
-  contribution: string;
-  roomType: "Dobbelrum" | "Enkeltrum" | "Ingen overnatning" | "";
   stayDuration: "1 nat (lør-søn)" | "2 nætter (fre-søn)" | "";
-  mainCourse1: "Kød til hovedret" | "Fisk til hovedret" | "";
-  mainCourse2: "Kød til hovedret" | "Fisk til hovedret" | "";
+  brunch: "Ja" | "Nej" | "";
 }
 
 const RSVP = React.forwardRef(({}, ref) => {
@@ -46,22 +42,15 @@ const RSVP = React.forwardRef(({}, ref) => {
     ) => Promise<void | FormikErrors<RSVPFormValues>>
   ) => {
     if (activeStep === 0) {
-      if (values.guest1 === "") setFieldTouched("guest1", undefined);
-      else if (values.email === "") setFieldTouched("guest1", undefined);
-      else if (values.expectation === "") setFieldTouched("guest1", undefined);
+      if (values.guest1 === "") {
+        setFieldTouched("guest1", undefined);
+      }
+      else if (values.expectation === "") {
+        setFieldTouched("guest1", undefined);
+      } 
       else setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else if (activeStep === 1) {
-      if (values.mainCourse1 === "") setFieldTouched("guest1", undefined);
-      else if (values.mainCourse2 === "" && values.guest2 !== "")
-        setFieldTouched("guest1", undefined);
-      else setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    } else if (activeStep === 2) {
-      if (values.roomType === "") setFieldTouched("roomType", undefined);
-      else if (
-        values.stayDuration == "" &&
-        values.roomType !== "Ingen overnatning"
-      )
-        setFieldTouched("stayDuration", undefined);
+      if (values.brunch === "" && values.stayDuration === "") setFieldTouched("brunch", undefined);
       else handleSubmit(values);
     }
   };
@@ -72,20 +61,19 @@ const RSVP = React.forwardRef(({}, ref) => {
 
   const handleSubmit = (values: RSVPFormValues) => {
     if (!isLastStep()) {
+      console.log(steps.length -1 )
+      console.log("not last step")
       return;
     }
+    console.log({values})
     // Create the form data
     const formData = new FormData();
     formData.append("Name1", values.guest1);
     formData.append("Name2", values.guest2);
     formData.append("Attending", values.expectation);
     formData.append("Allergies", values.allergies);
-    formData.append("Contribution", values.contribution);
-    formData.append("Email", values.email);
-    formData.append("RoomType", values.roomType);
     formData.append("StayDuration", values.stayDuration.toString());
-    formData.append("MainCourse1", values.mainCourse1);
-    formData.append("MainCourse2", values.mainCourse2);
+    formData.append("Brunch", values.brunch === "Ja" ? values.guest2 !== "" ? "2 stk" : "1 stk" : "Nej");
 
     // Call the submitForm API with the form data
     try {
@@ -107,13 +95,6 @@ const RSVP = React.forwardRef(({}, ref) => {
         errors: FormikErrors<RSVPFormValues>,
         touched: FormikTouched<RSVPFormValues>
       ) => <InfoForm errors={errors} touched={touched} />,
-    },
-    {
-      component: (
-        values: RSVPFormValues,
-        errors: FormikErrors<RSVPFormValues>,
-        touched: FormikTouched<RSVPFormValues>
-      ) => <FoodForm values={values} errors={errors} touched={touched} />,
     },
     {
       component: (
@@ -182,14 +163,10 @@ const RSVP = React.forwardRef(({}, ref) => {
             initialValues={{
               guest1: "",
               guest2: "",
-              email: "",
               expectation: "",
               allergies: "",
-              contribution: "",
-              roomType: "",
               stayDuration: "",
-              mainCourse1: "",
-              mainCourse2: "",
+              brunch: "",
             }}
             onSubmit={handleSubmit}
             validationSchema={RSVPValidation}
@@ -211,7 +188,7 @@ const RSVP = React.forwardRef(({}, ref) => {
                 <Grid item xs={12} sx={{ alignItems: "center" }}>
                   <CustomMobileStepper
                     activeStep={activeStep}
-                    steps={3}
+                    steps={2}
                     values={values}
                     handleBack={handleBack}
                     handleNext={handleNext}

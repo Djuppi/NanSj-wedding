@@ -21,66 +21,73 @@ const AccommodationForm = (props: Props) => {
   return (
     <>
       <Grid item xs={12}>
-        <FormLabel htmlFor="roomType">Overnatting:</FormLabel>
+        <FormLabel htmlFor="roomType">
+          Vil du/dere overnatte på Lille Restrup Hovedgaard?
+        </FormLabel>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FormLabel htmlFor="roomType">Varighet:</FormLabel>
         <Field
           component={RadioGroup}
           style={{ alignItems: "center" }}
-          name="roomType"
-          aria-labelledby="roomType"
+          name="stayDuration"
+          aria-labelledby="stayDuration"
         >
           <FormControlLabel
             control={<StyledRadio />}
-            label="Dobbeltrom (1.700 DKK per natt)"
-            value="Dobbelværelse"
+            label="Ja, én natt fra lørdag til søndag"
+            value="1 nat"
           />
           <FormControlLabel
             control={<StyledRadio />}
-            label="Enkeltrom (1.400 DKK per natt)"
-            value="Enkeltværelse"
+            label="Ja, to netter fra fredag til søndag"
+            value="2 nætter"
           />
           <FormControlLabel
             control={<StyledRadio />}
-            label="Jeg/vi finner selv overnatting"
-            value="Ingen overnatning"
+            label="Ingen overnatning"
+            value=""
           />
         </Field>
-        {errors.roomType && touched.roomType && (
+        {errors.stayDuration && touched.stayDuration && (
           <Typography fontSize="small" color="error">
-            {errors.roomType}
+            {errors.stayDuration}
           </Typography>
         )}
       </Grid>
-      {values.roomType !== "Ingen overnatning" && (
+      {values.stayDuration === "" && (
         <Grid item xs={12}>
-          <FormLabel htmlFor="roomType">Varighet:</FormLabel>
-          <Field
-            component={RadioGroup}
-            style={{ alignItems: "center" }}
-            name="stayDuration"
-            aria-labelledby="stayDuration"
-          >
-            <FormControlLabel
-              control={<StyledRadio />}
-              label="1 natt (lørdag-søndag)"
-              value="1 nat"
-            />
-            <FormControlLabel
-              control={<StyledRadio />}
-              label="2 netter (fredag-søndag)"
-              value="2 nætter"
-            />
-          </Field>
-          {errors.stayDuration && touched.stayDuration && (
-            <Typography fontSize="small" color="error">
-              {errors.stayDuration}
-            </Typography>
-          )}
+        <FormLabel htmlFor="brunch">Har du/i ikke overnatting, men ønsker å delta på brunch søndag kl. 10.00?*</FormLabel>
+        <Field
+          component={RadioGroup}
+          style={{ alignItems: "center" }}
+          name="brunch"
+          aria-labelledby="brunch"
+          required
+        >
+          <FormControlLabel
+            control={<StyledRadio />}
+            label="Ja"
+            value="Ja"
+          />
+          <FormControlLabel
+            control={<StyledRadio />}
+            label="Nei"
+            value="Nej"
+          />
+        </Field>
+        {errors.brunch && touched.brunch && (
+          <Typography fontSize="small" color="error">
+            {errors.brunch}
+          </Typography>
+        )}
         </Grid>
       )}
       <Grid item xs={12}>
         <Typography fontStyle="italic">
           Spørsmål? Ta gjerne kontakt med oss på{" "}
-          <Link href="mailto:askeogsus@gmail.com">mail</Link>
+          <Link href="mailto:sjurognanna@hotmail.com">mail</Link>
         </Typography>
       </Grid>
     </>

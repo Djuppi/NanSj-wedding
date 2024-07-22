@@ -37,16 +37,8 @@ const InfoForm: FC<Props> = (props: Props) => {
         />
       </Grid>
       <Grid item xs={12}>
-        <CssTextField name="email" id="email" label="E-post" control="input" />
-        {errors.email && touched.email && (
-          <Typography fontSize="small" color="error">
-            {errors.email}
-          </Typography>
-        )}
-      </Grid>
-      <Grid item xs={12}>
         <FormLabel id="demo-radio-buttons-group-label">
-          Kan vi forvente deg/dere? *
+        Kommer du/dere i bryllupet?*
         </FormLabel>
         <Field
           component={RadioGroup}
@@ -55,6 +47,7 @@ const InfoForm: FC<Props> = (props: Props) => {
           aria-labelledby="demo-radio-buttons-group-label"
         >
           <FormControlLabel control={<StyledRadio />} label="Ja" value="ja" />
+          <FormControlLabel control={<StyledRadio />} label="Ja, men kun i kirken" value="kun kirke" />
           <FormControlLabel
             control={<StyledRadio />}
             label="Nei, dessverre"
@@ -69,11 +62,10 @@ const InfoForm: FC<Props> = (props: Props) => {
         )}
       </Grid>
       <Grid item xs={12}>
-        <FormLabel htmlFor="allergies1">
-          Legg igjen kommentar dersom du ønsker å bidra med noe til programmet
-          (tale/underholdning).
+        <FormLabel id="demo-radio-buttons-group-label">
+        Er du vegetarianer/veganer eller har noen matallergier?
         </FormLabel>
-        <CssTextField name="contribution" control={"input"} multiline />
+        <CssTextField name="allergies" control={"input"} multiline />
       </Grid>
     </>
   );

@@ -2,11 +2,11 @@
   "name": "NanSj-wedding",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://djuppi.github.io/NanSj-wedding",
+  "homepage": "https://www.nannaogsjur.no",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --cname www.nannaogsjur.no",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

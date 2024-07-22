@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import RSVP from "@components/RSVP";
 import InfoContainer from "@components/InfoContainer";
-import CeremonyContainer from "@components/CeremonyContainer";
+
 import IMAGES from "./Images";
 import Footer from "@components/Footer";
 import AccommodationContainer from "@components/AccommodationContainer";
@@ -67,7 +67,7 @@ function App() {
             src={IMAGES.portrait}
             alt="bride and groom"
             effect="opacity"
-            width={isLargeScreen ? 200 : 300}
+            width={isLargeScreen ? 150 : 300}
             style={{
               position: "absolute",
               right: isMediumScreen ? "5px" : "70px",
