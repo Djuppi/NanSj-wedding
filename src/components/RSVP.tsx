@@ -61,11 +61,9 @@ const RSVP = React.forwardRef(({}, ref) => {
 
   const handleSubmit = (values: RSVPFormValues) => {
     if (!isLastStep()) {
-      console.log(steps.length -1 )
-      console.log("not last step")
       return;
     }
-    console.log({values})
+
     // Create the form data
     const formData = new FormData();
     formData.append("Name1", values.guest1);
