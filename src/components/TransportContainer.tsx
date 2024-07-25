@@ -31,7 +31,7 @@ const TransportContainer = () => {
         Med offentlig transport:
       </Typography>
       <Typography>
-        Skal du til Lille Rastrup Hovedgaard med buss, er Aalestrup Busterminal
+        Skal du til Lille Restrup Hovedgaard med buss, er Aalestrup Busterminal
         nærmeste stasjon. Fra busterminalen er det 20 minutters gange via
         Himmerlandsstien.
       </Typography>

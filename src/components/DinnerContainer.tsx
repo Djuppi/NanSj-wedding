@@ -31,13 +31,13 @@ const DinnerContainer = () => (
         </ListItem>
         <ListItem>
           <ListItemIcon>
-            <img src={Images.rings} width={20} alt="Wedding rings" />
+            <img src={Images.camera} width={20} alt="Wedding rings" />
           </ListItemIcon>
           <ListItemText primary="14:00 - Ankomst Lille Restrup Hovedgaard med servering og fotografering" />
         </ListItem>
         <ListItem>
           <ListItemIcon>
-            <img src={Images.camera} width={20} alt="camera" />
+            <img src={Images.cake} width={20} alt="camera" />
           </ListItemIcon>
           <ListItemText primary="15:30 - Bryllupskake og velkomstdrink" />
         </ListItem>
@@ -55,7 +55,7 @@ const DinnerContainer = () => (
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <img src={Images.cake} width={20} alt="cake" />
+          <img src={Images.dj} width={20} alt="cake" />
         </ListItemIcon>
         <ListItemText primary="Når brudevalsen er ferdig - Dansegulvet åpnes" />
       </ListItem>

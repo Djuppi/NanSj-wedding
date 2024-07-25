@@ -1,10 +1,10 @@
 const IMAGES = {
   portrait: new URL("./assets/Portrait.png", import.meta.url).href,
   Kirke: new URL("./assets/HvamKirke.jpg", import.meta.url).href,
-  transport: new URL("./assets/Utsikt.jpg", import.meta.url).href,
+  sunday: new URL("./assets/Utsikt.jpg", import.meta.url).href,
   accommodation: new URL("./assets/Rom.jpg", import.meta.url).href,
   ceremony: new URL("./assets/Hovedbygning.jpg", import.meta.url).href,
-  reception: new URL("./assets/Hovedbygning.jpg", import.meta.url).href,
+  transport: new URL("./assets/Hovedbygning.jpg", import.meta.url).href,
   weddingDinner: new URL("./assets/Vestfløy2.jpg", import.meta.url).href,
   lemon: new URL("./assets/sitron.png", import.meta.url).href,
   lemonBranch: new URL("./assets/Sitron2.png", import.meta.url).href,

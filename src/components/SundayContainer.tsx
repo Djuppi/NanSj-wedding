@@ -12,7 +12,7 @@ const SundayContainer = () => (
   <StyledPicInfoContainer
     orderImageDesktop={2}
     orderInfoDesktop={1}
-    image={Images.reception}
+    image={Images.sunday}
     id="program"
   >
     <Typography
